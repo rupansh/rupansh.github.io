@@ -3,21 +3,21 @@ $(document).ready(() => {
         let overActive = false;
         let animActive = false;
     
-        function reverseNav(injectFunc=function(){ return }) {
+        async function reverseNav(injectFunc=async function(){ return }) {
             animActive = true;
     
-            return $("#nav-toggle").fadeOut("fast").promise()
-                   .then(_ => $(".overlay-nav").fadeOut("fast").promise())
-                   .then(_ => $("#mOverlay").animate({width: "0"}).css({"display": "block", "z-index": 3}, {duration: 30, easing: "linear"}).promise())
-                   .then(_ => $("#tCol").animate({width: "0"}).css({"background-color": "#fe53bb", "display": "block"}, {duration: 15, easing: "linear"}).promise())
-                   .then(_ => $("#sCol").animate({width: "0"}).css({"background-color": "#f5d300", "display": "block"}, {duration: 10, easing: "linear"}).promise())
-                   .then(_ => injectFunc())
-                   .then(_ => $("#fCol").animate({width: "0"}).css({"background-color": "#08f7fe", "display": "block"}, {duration: 5, easing: "linear"}).promise())
-                   .then(_ => $("body").css("overflow", "visible").promise())
-                   .then(_ => $(".temp").remove().promise())
-                   .then(_ => $("#nav-toggle").children().removeClass("fa-times").addClass("fa-bars").promise())
-                   .then(_ => $("#nav-toggle").fadeIn("fast").promise())
-                   .then(_ => { animActive = false; });
+            await $("#nav-toggle").fadeOut("fast").promise();
+            await $(".overlay-nav").fadeOut("fast").promise();
+            await $("#mOverlay").animate({width: "0"}).css({"display": "block", "z-index": 3}, {duration: 30, easing: "linear"}).promise();
+            await $("#tCol").animate({width: "0"}).css({"background-color": "#fe53bb", "display": "block"}, {duration: 15, easing: "linear"}).promise();
+            await $("#sCol").animate({width: "0"}).css({"background-color": "#f5d300", "display": "block"}, {duration: 10, easing: "linear"}).promise();
+            injectFunc();
+            await $("#fCol").animate({width: "0"}).css({"background-color": "#08f7fe", "display": "block"}, {duration: 5, easing: "linear"}).promise();
+            await $("body").css("overflow", "visible").promise();
+            await $(".temp").remove().promise();
+            await $("#nav-toggle").children().removeClass("fa-times").addClass("fa-bars").promise();
+            await $("#nav-toggle").fadeIn("fast").promise();
+            animActive = false;
         }
     
         $(".navbar-brand").click(() => {
@@ -25,21 +25,21 @@ $(document).ready(() => {
                 scrollTop: $("#main").offset().top}, 500, () =>  window.location.hash = "#main" );
         });
     
-        $("#nav-toggle").click(() => {
+        $("#nav-toggle").click(async () => {
             if (!overActive){
                 $('<div class="overlay temp" id="fCol"></div>').appendTo(document.body);
                 $('<div class="overlay temp" id="sCol"></div>').appendTo(document.body);
                 $('<div class="overlay temp" id="tCol"></div>').appendTo(document.body);
     
-                $("#nav-toggle").fadeOut("fast").promise()
-                .then(_ => $("body").css("overflow", "hidden").promise())
-                .then(_ => $("#fCol").animate({width: "100%"}).css({"background-color": "#fe53bb", "display": "block"}, {duration: 30, easing: "linear"}).promise())
-                .then(_ => $("#sCol").animate({width: "100%"}).css({"background-color": "#f5d300", "display": "block"}, {duration: 15, easing: "linear"}).promise())
-                .then(_ => $("#tCol").animate({width: "100%"}).css({"background-color": "#08f7fe", "display": "block"}, {duration: 10, easing: "linear"}).promise())
-                .then(_ => $("#mOverlay").animate({width: "100%"}).css({"display": "block", "z-index": 3}, {duration: 5, easing: "linear"}).promise())
-                .then(_ => $(".overlay-nav").fadeIn("fast").promise())
-                .then(_ => $("#nav-toggle").children().removeClass("fa-bars").addClass("fa-times").promise())
-                .then(_ => $("#nav-toggle").fadeIn("fast").promise());
+                await $("#nav-toggle").fadeOut("fast").promise();
+                await $("body").css("overflow", "hidden").promise();
+                await $("#fCol").animate({width: "100%"}).css({"background-color": "#fe53bb", "display": "block"}, {duration: 30, easing: "linear"}).promise();
+                await $("#sCol").animate({width: "100%"}).css({"background-color": "#f5d300", "display": "block"}, {duration: 15, easing: "linear"}).promise();
+                await $("#tCol").animate({width: "100%"}).css({"background-color": "#08f7fe", "display": "block"}, {duration: 10, easing: "linear"}).promise();
+                await $("#mOverlay").animate({width: "100%"}).css({"display": "block", "z-index": 3}, {duration: 5, easing: "linear"}).promise();
+                await $(".overlay-nav").fadeIn("fast").promise();
+                await $("#nav-toggle").children().removeClass("fa-bars").addClass("fa-times").promise();
+                await $("#nav-toggle").fadeIn("fast").promise();
     
                 overActive = true;
             } else {
@@ -142,41 +142,6 @@ $(document).ready(() => {
     
             this.destroy()
         }, {offset: "100%"})
-    
-    
-        $(".sicon").each((_, self) => {
-            let origWidth = $(self).width();
-            let origHeight = $(self).height();
-            let origPos = {top: 0, left: 0};
-            let saved = false;
-            let origFontSz = parseInt($(self).children().css("font-size").replace("px", ""));
-            $(self).hover(
-                () => {
-                    if (!saved) {
-                        // weird af, no idea why it doesn't work if saved before hover
-                        origPos.left = $(self).css("left");
-                        origPos.top = $(self).css("top")
-                        saved = true;
-                    }
-                    $("#social").stop().animate({marginBottom: "30rem"}, {duration: 400, easing: "swing"});
-                    $("#profile-pic").stop().animate({width: `${321/2}px`, height: `auto`, marginTop: `${321/4}px`},
-                        {duration: 400, easing: "swing"});
-                    $(self).stop().animate({width: `${$(self).width() + (2*25)}px`, height: `${$(self).height() + (2*25)}px`, top: `${$(self).position().top - 25}px`, left: `${$(self).position().left - 25}px`},
-                        {duration: 400, easing: "swing"});
-                    $(self).children().stop().animate({fontSize: `${origFontSz*1.5}px`},
-                        {duration: 400, easing: "swing"});
-                },
-                () => {
-                    $("#social").stop().animate({marginBottom: "15rem"}, {duration: 400, easing: "swing"});
-                    $("#profile-pic").stop().animate({width: `${321}px`, height: `auto`, marginTop: '0px'},
-                        {duration: 400, easing: "swing"});
-                    $(self).stop().animate({width: `${origWidth}px`, height: `${origHeight}px`, top: origPos.top, left: origPos.left},
-                        {duration: 400, easing: "swing"});
-                    $(self).children().stop().animate({fontSize: `${origFontSz}px`},
-                        {duration: 400, easing: "swing"});
-                }
-            )
-        });
     }
 
     function socialSetup() {
@@ -204,6 +169,54 @@ $(document).ready(() => {
           $("#social")[0].setCircle = setCircle;
       
           $(window).resize(setCircle);
+
+          $(".sicon").each((_, self) => {
+            let origWidth = $(self).width();
+            let origHeight = $(self).height();
+            let origPos = {top: 0, left: 0};
+            let origPosC = $(self).position();
+            let saved = false;
+            let origFontSz = parseInt($(self).children().css("font-size").replace("px", ""));
+
+            function siconInfo() {
+                origWidth = $(self).width();
+                origHeight = $(self).height();
+                origPos = {top: 0, left: 0};
+                origPosC = $(self).position();
+                saved = false;
+                origFontSz = parseInt($(self).children().css("font-size").replace("px", ""));
+            }
+
+            $(window).resize(siconInfo)
+
+            $(self).hover(
+                () => {
+                    if (!saved) {
+                        // weird af, no idea why it doesn't work if saved before hover
+                        origPos.left = $(self).css("left");
+                        origPos.top = $(self).css("top");
+                        origPosC = $(self).position();
+                        saved = true;
+                    }
+                    $("#social").stop().animate({marginBottom: "30rem"}, {duration: 400, easing: "swing"});
+                    $("#profile-pic").stop().animate({width: `${321/2}px`, height: `auto`, marginTop: `${321/4}px`},
+                        {duration: 400, easing: "swing"});
+                    $(self).stop().animate({width: `${origWidth + (2*25)}px`, height: `${origHeight + (2*25)}px`, top: `${origPosC.top - 25}px`, left: `${origPosC.left - 25}px`},
+                        {duration: 400, easing: "swing"});
+                    $(self).children().stop().animate({fontSize: `${origFontSz*1.5}px`},
+                        {duration: 400, easing: "swing"});
+                },
+                () => {
+                    $("#social").stop().animate({marginBottom: "15rem"}, {duration: 400, easing: "swing"});
+                    $("#profile-pic").stop().animate({width: `${321}px`, height: `auto`, marginTop: '0px'},
+                        {duration: 400, easing: "swing"});
+                    $(self).stop().animate({width: `${origWidth}px`, height: `${origHeight}px`, top: origPos.top, left: origPos.left},
+                        {duration: 400, easing: "swing"});
+                    $(self).children().stop().animate({fontSize: `${origFontSz}px`},
+                        {duration: 400, easing: "swing"});
+                }
+            )
+        });
     }
 
     setupNav();
