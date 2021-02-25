@@ -118,6 +118,80 @@ $(document).ready(() => {
         });
     })();
 
+    // Render Skill Components
+    (() => {
+        function skillItem(name, perc) {
+            return {
+                name: name,
+                pix: 2*(100 - (perc)), // Height of fill is 200px
+                duration: (2/75)*perc // Ensure that they are filled within a time limit
+            };
+        }
+
+        const skillTemp = Template("skill-item");
+        const ctx = [
+            skillItem("Python", 90),
+            skillItem("Kotlin", 75),
+            skillItem("C/C++", 65),
+            skillItem("Rust", 75),
+            skillItem("Nim", 69), // Nice
+            skillItem("AOSP_Devel", 72),
+            skillItem("Linux", 70),
+            skillItem("Web_Devel", 55)
+        ];
+        skillTemp.bind(ctx);
+    })();
+
+    // Render Project Components
+    (() => {
+        const projTemp = Template("proj-item");
+        const ctx = [
+            {
+                title: "android_kernel_xiaomi_msm8937-4.9",
+                desc: "A crude attempt to boot Linux Kenel 4.9 on Xiaomi Redmi 3s(land).",
+                lang: "c",
+                license: "GPLv2",
+                url: "https://github.com/rupansh/android_kernel_xiaomi_msm8937-4.9"
+            },
+            {
+                title: "nim-tg-manager",
+                desc: "A management bot for telegram, written in nim!",
+                lang: "nim",
+                license: "RPL-1.b",
+                url: "https://github.com/rupansh/nim-tg-manager"
+            },
+            {
+                title: "generic-ota-app",
+                desc: "A generic OTA app for custom roms that doesn't require sys-priv",
+                lang: "kotlin",
+                license: "Apache-2.0",
+                url: "https://github.com/rupansh/generic-ota-app"
+            },
+            {
+                title: "csgo-external-rust",
+                desc: "A PoC external cheat for CounterStrike Global Offensive",
+                lang: "rust",
+                license: "GPLv3",
+                url: "https://github.com/rupansh/csgo-external-rust"
+            },
+            {
+                title: "JABB",
+                desc: "Just Another telegram BuildBot for building ROMS on-the-go!",
+                lang: "python",
+                license: "GPLv3",
+                url: "https://github.com/rupansh/JABB"
+            },
+            {
+                title: "Chimera Kernel Project",
+                desc: "A custom kernel for Redmi 3s, prioritizing performance",
+                lang: "c",
+                license: "Various",
+                url: "https://github.com/ChimeraKernelProject"
+            }
+        ];
+        projTemp.bind(ctx);
+    })();
+
     // Waypoints Setup
     (() => {
         function shuffleWords(holder) {

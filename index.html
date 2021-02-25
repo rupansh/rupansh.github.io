@@ -51,104 +51,22 @@
         <!-- skills -->
         <div id="skills">
             <h4>fn skill(language: &str) {</h4>
-            <div class="row" id="skill-table">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="skill" id="sk-py">
-                        <div class="fill">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                <path fill="#f5d300" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
-                              c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
-                              c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
-                            </svg>
+            <ul class="row list-unstyled" id="skill-table">
+                <template name=skill-item>
+                    <li class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="skill">
+                            <div class="fill" style="--max: {pix}px; animation-duration: {duration}s;">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                                    <path fill="#f5d300" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
+                                  c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
+                                  c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
+                                </svg>
+                            </div>
+                            <p>{name}</p>
                         </div>
-                        <p>Python</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="skill" id="sk-kt">
-                        <div class="fill">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                <path fill="#f5d300" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
-                              c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
-                              c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
-                            </svg>
-                        </div>
-                        <p>Kotlin</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="skill" id="sk-c">
-                        <div class="fill">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                <path fill="#f5d300" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
-                              c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
-                              c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
-                            </svg>
-                        </div>
-                        <p>C/C++</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="skill" id="sk-rs">
-                        <div class="fill">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                <path fill="#f5d300" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
-                              c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
-                              c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
-                            </svg>
-                        </div>
-                        <p>Rust</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="skill" id="sk-nim">
-                        <div class="fill">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                <path fill="#f5d300" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
-                              c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
-                              c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
-                            </svg>
-                        </div>
-                        <p>Nim</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="skill" id="sk-aosp">
-                        <div class="fill">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                <path fill="#f5d300" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
-                              c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
-                              c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
-                            </svg>
-                        </div>
-                        <p>AOSP_Devel</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="skill" id="sk-lnx">
-                        <div class="fill">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                <path fill="#f5d300" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
-                              c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
-                              c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
-                            </svg>
-                        </div>
-                        <p>Linux_Kernel</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="skill" id="sk-web">
-                        <div class="fill">
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                <path fill="#f5d300" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
-                              c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
-                              c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
-                            </svg>
-                        </div>
-                        <p>Web_Devel</p>
-                    </div>
-                </div>
-            </div>
+                    </li>
+                </template>
+            </ul>
             <h4>}</h4>
         </div>
 
@@ -159,72 +77,19 @@
         <!-- projects -->
         <div id="projects">
             <h4>def projects(username="rupansh", project):</h4>
-            <div class="proj-wrapper">
-                <a href="https://github.com/rupansh/android_kernel_xiaomi_msm8937-4.9" id="prl-0" target="_blank">
-                    <div class="project">
-                        <div class="proj-info">
-                            <h5>android_kernel_xiaomi_msm8937-4.9</h5>
-                            <p>A crude attempt to boot Linux Kenel 4.9 on Xiaomi Redmi 3s(land).</p>
-                            <p class="pr-info">lang: c &nbsp;license: GPLv2</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="proj-wrapper">
-                <a href="https://github.com/rupansh/nim-tg-manager" id="prl-1" target="_blank">
-                    <div class="project">
-                        <div class="proj-info">
-                            <h5>nim-tg-manager</h5>
-                            <p>A management bot for telegram, written in nim!</p>
-                            <p class="pr-info">lang: nim &nbsp;license: RPL-1.b</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="proj-wrapper">
-                <a href="https://github.com/rupansh/generic-ota-app" id="prl-2" target="_blank">
-                    <div class="project">
-                        <div class="proj-info">
-                            <h5>generic-ota-app</h5>
-                            <p>A generic OTA app for custom roms that doesn't require sys-priv</p>
-                            <p class="pr-info">lang: kotlin &nbsp;license: Apache-2.0</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="proj-wrapper">
-                <a href="https://github.com/rupansh/csgo-external-rust" id="prl-3" target="_blank">
-                    <div class="project">
+            <template name="proj-item">
+                <div class="proj-wrapper">
+                    <a href="{url}" target="_blank">
+                        <div class="project">
                             <div class="proj-info">
-                            <h5>csgo-external-rust</h5>
-                            <p>A PoC external cheat for CounterStrike Global Offensive, written in rust.</p>
-                            <p class="pr-info">lang: rust &nbsp;license: GPLv3</p>
+                                <h5>{title}</h5>
+                                <p>{desc}</p>
+                                <p class="pr-info">lang: {lang} &nbsp;license: {license}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="proj-wrapper">
-                <a href="https://github.com/rupansh/JABB" id="prl-4" target="_blank">
-                    <div class="project">
-                            <div class="proj-info">
-                            <h5>JABB</h5>
-                            <p>Just Another telegram BuildBot, written in python for building ROMS on-the-go!</p>
-                            <p class="pr-info">lang: python &nbsp;license: GPLv3</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="proj-wrapper">
-                <a href="https://github.com/ChimeraKernelProject" target="_blank">
-                    <div class="project">
-                            <div class="proj-info">
-                            <h5>Chimera Kernel Project</h5>
-                            <p>A custom kernel for Redmi 3s, prioritizing performance</p>
-                            <p class="pr-info">lang: c &nbsp;license: Various</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            </template>
             <h4 id="pr-ret">return f"https://github.com/{username}/{project}"</h4>
         </div>
     </div>
@@ -249,6 +114,7 @@
     <!-- JS -->
     <script src="js/detect-phone.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="js/snuggsi.min.js"></script> <!-- CDN is too slow -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="js/three.r95.min.js"></script>

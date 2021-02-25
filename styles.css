@@ -182,46 +182,6 @@ body {
     animation-fill-mode: forwards;
 }
 
-#sk-py.avail .fill {
-    --max: 20px;
-    animation-duration: 2.6s;
-}
-
-#sk-kt.avail .fill {
-    --max: 50px;
-    animation-duration: 2s;
-}
-
-#sk-c.avail .fill {
-    --max: 70px;
-    animation-duration: 1.6s;
-}
-
-#sk-rs.avail .fill {
-    --max: 50px;
-    animation-duration: 2s;
-}
-
-#sk-nim.avail .fill {
-    --max: 62px;
-    animation-duration: 1.78s;
-}
-
-#sk-aosp.avail .fill {
-    --max: 55px;
-    animation-duration: 1.9s;
-}
-
-#sk-lnx.avail .fill {
-    --max: 60px;
-    animation-duration: 1.8s;
-}
-
-#sk-web.avail .fill {
-    --max: 90px;
-    animation-duration: 1.2s;
-}
-
 .skill #waveShape {
     animation-name: waveAction;
     animation-iteration-count: infinite;
@@ -308,7 +268,7 @@ body {
 }
 
 .project.avail:hover {
-    background-color: #2a2a2a;
+    background-color: #2a2a2a; 
 }
 
 .proj-wrapper {
