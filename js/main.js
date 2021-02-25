@@ -11,27 +11,27 @@ $(document).ready(() => {
             await $(".overlay-nav").fadeOut("fast").promise();
 
             // "Navigation transition effect reversed"
-            await $("#mOverlay").animate({ width: "0" }, duration=30, easing="linear").css({
+            await $("#mOverlay").animate({ width: "0" }).css({
                 "display": "block",
                 "z-index": 3
-            }).promise();
+            }, { duration: 30, easing: "linear" }).promise();
 
-            await $("#tCol").animate({ width: "0"}, duration=15, easing="linear").css({
+            await $("#tCol").animate({ width: "0"}).css({
                 "background-color": "#fe53bb",
                 "display": "block"
-            }).promise();
+            }, { duration: 15, easing: "linear" }).promise();
 
-            await $("#sCol").animate({ width: "0" }, duration=10, easing="linear").css({
+            await $("#sCol").animate({ width: "0" }).css({
                 "background-color": "#f5d300",
                 "display": "block"
-            }).promise();
+            }, { duration: 10, easing: "linear" }).promise();
 
             injectFunc();
 
-            await $("#fCol").animate({ width: "0" }, duration=5, easing="linear").css({
+            await $("#fCol").animate({ width: "0" }).css({
                 "background-color": "#08f7fe",
                 "display": "block"
-            }).promise();
+            }, { duration: 5, easing: "linear" }).promise();
 
             await $("body").css("overflow", "visible").promise();
             await $(".temp").remove().promise(); // nuke temporary overlays
@@ -43,7 +43,7 @@ $(document).ready(() => {
         }
 
         $(".navbar-brand").click(async () => {
-            await $('html, body').animate({ scrollTop: $("#main").offset().top }, duration=500,);
+            await $('html, body').animate({ scrollTop: $("#main").offset().top }, { duration: 500 });
             window.location.hash = "#main";
         });
 
@@ -58,25 +58,25 @@ $(document).ready(() => {
                 await $("body").css("overflow", "hidden").promise();
 
                 // Navigation Transition Effect
-                await $("#fCol").animate({ width: "100%" }, duration = 30, easing = "linear").css({
+                await $("#fCol").animate({ width: "100%" }).css({
                     "background-color": "#fe53bb",
                     "display": "block"
-                }).promise();
+                }, { duration:  30, easing: "linear" }).promise();
 
-                await $("#sCol").animate({ width: "100%" }, duration = 15, easing = "linear").css({
+                await $("#sCol").animate({ width: "100%" }).css({
                     "background-color": "#f5d300",
                     "display": "block"
-                }).promise();
+                }, { duration:  15, easing: "linear" }).promise();
 
-                await $("#tCol").animate({ width: "100%" }, duration = 10, easing = "linear").css({
+                await $("#tCol").animate({ width: "100%" }).css({
                     "background-color": "#08f7fe",
                     "display": "block"
-                }).promise();
+                }, { duration:  10, easing: "linear" }).promise();
 
-                await $("#mOverlay").animate({ width: "100%" }, duration = 5, easing = "linear").css({
+                await $("#mOverlay").animate({ width: "100%" }).css({
                     "display": "block",
                     "z-index": 3
-                }).promise();
+                }, { duration:  5, easing: "linear" }).promise();
 
                 await $(".overlay-nav").fadeIn("fast").promise();
                 await $("#nav-toggle").children().removeClass("fa-bars").addClass("fa-times").promise(); // Change nav icon
@@ -254,7 +254,7 @@ $(document).ready(() => {
             $(self).waypoint((direction) => setAvail($(self), direction), { offset: "100%" });
         });
 
-        $("#social").waypoint(() => {
+        $("#social").waypoint(function() {
             // Accumaltor object animated from 160.5 to 321
             $({ imW: 160.5 }).animate({ imW: 321 }, {
                 duration: 300,
@@ -356,7 +356,7 @@ $(document).ready(() => {
                 () => {
                     // Above but opposite
 
-                    $("#social").stop().animate({ marginBottom: "30rem" }, { duration: 400, easing: "swing" });
+                    $("#social").stop().animate({ marginBottom: "15rem" }, { duration: 400, easing: "swing" });
 
                     $("#profile-pic").stop().animate({
                         width: '321px',
