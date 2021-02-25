@@ -41,9 +41,8 @@ body {
 
 .overlay {
     position: fixed;
-    display: block;
     width: 0;
-    height: 100%;
+    height: 100vh;
     background-color: #121212;
     display: none;
     top: 0;
@@ -52,25 +51,13 @@ body {
 }
 
 .overlay-nav {
-    margin-top: 15.13125rem;
     list-style: none;
-    margin-left: 13rem;
     display: none;
-}
-
-.port .overlay-nav {
-    margin-top: 20rem;
-    margin-left: 10rem;
-}
-
-.land .overlay-nav {
-    margin-top: 7rem;
-    margin-left: 22rem;
 }
 
 .overlay-nav li {
     width: 0%;
-    margin-bottom: 45px;
+    margin-bottom: 3vh;
     padding: 0;
 }
 
@@ -78,17 +65,9 @@ body {
     display: inline-block;
     color: #fafafa;
     font-family: "IBM Plex Sans Condensed";
-    font-size: 5rem;
+    font-size: 6rem;
     margin-bottom: -2em;
     margin-top: -1.8rem;
-}
-
-.port .overlay a {
-    font-size: 8rem;
-}
-
-.land .overlay a {
-    font-size: 2rem;
 }
 
 .overlay a:hover {
@@ -107,29 +86,10 @@ body {
     padding-bottom: 26rem;
 }
 
-.port #main {
-    text-align: center;
-}
-
-.land #main {
-    text-align: center;
-}
-
 #main p {
     font-weight: 600;
     font-size: 4.5rem;
     padding-top: 15rem;
-    padding-left: 20rem;
-}
-
-.port #main p {
-    padding-left: 0;
-    padding-top: 20rem;
-}
-
-.land #main p {
-    padding-left: 0;
-    padding-top: 10rem;
 }
 
 /* Transition */
@@ -172,22 +132,23 @@ body {
     margin-bottom: 4rem;
     overflow: hidden;
     backface-visibility: hidden;
-    transform: translate3d(0, 0, 0);
+    transform: translate(0, 0);
 }
 
 .skill.avail .fill {
+    height: 0;
     animation-name: fillAction;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(.2, .6, .8, .4);
     animation-fill-mode: forwards;
 }
 
-.skill #waveShape {
+.skill .waveShape {
     animation-name: waveAction;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-duration: 0.5s;
-    width:400px;
+
     fill: #09fbd3;
 }
 
@@ -196,7 +157,7 @@ body {
         transform: translate(0, 200px);
     }
     100% {
-        transform: translate(0, var(--max, 190px));
+        transform: translate(0, var(--max, 0px));
     }
 }
 
@@ -273,18 +234,7 @@ body {
 
 .proj-wrapper {
     margin-top: 2rem;
-    margin-left: 10rem;
     width: 65%;
-}
-
-.port .proj-wrapper {
-    margin-left: -2rem;
-    width: 100%;
-}
-
-.land .proj-wrapper {
-    margin-left: 2rem;
-    width: 80%;
 }
 
 .proj-wrapper a:hover {
@@ -295,20 +245,11 @@ body {
     font-family: 'Open Sans';
     font-size: 1.8rem;
     color: #09fbd3;
-
-}
-
-.port #projects h4 {
-    font-size: 0.9rem;
 }
 
 .project h5 {
     font-size: 1.5rem;
     font-family: 'Open Sans';
-}
-
-.port .project h5 {
-    font-size: 0.3rem;
 }
 
 .project p {
@@ -319,10 +260,6 @@ body {
     margin-bottom: -0.4rem;
 }
 
-.port .project p {
-    font-size: 0.05rem;
-}
-
 .project .pr-info {
     font-size: 0.8rem;
     margin-top: 1.3rem;
@@ -331,17 +268,7 @@ body {
 
 #pr-ret {
     font-family: 'IBM Plex Mono';
-    margin-left: 8rem;
     margin-top: 2rem;
-}
-
-.port #pr-ret {
-    margin-left: 3rem;
-    font-size: 0.1rem;
-}
-
-.land #pr-ret {
-    margin-left: 2rem;
 }
 
 /* Transition */
@@ -428,10 +355,6 @@ a.fa-telegram {
 }
 
 /* Footer */
-.port #footer {
-    display: none;
-}
-
 #footer p {
     text-align: right;
     margin-right: 1.2em;

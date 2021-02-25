@@ -18,17 +18,17 @@
         <i class="fas fa-2x fa-bars"></i>
     </button>
     <div class="overlay" id="mOverlay">
-        <ul class="overlay-nav">
-            <li>
+        <ul class="overlay-nav text-lg-left text-sm-center">
+            <li class="col-lg-11 offset-lg-1 col-sm-3 offset-sm-3">
                 <a href="#main" rhref="#main">HOME</a>
             </li>
-            <li>
+            <li class="col-lg-11 offset-lg-1 col-sm-3 offset-sm-3">
                 <a href="#main" rhref="#skills">SKILLS</a>
             </li>
-            <li>
+            <li class="col-lg-11 offset-lg-1 col-sm-3 offset-sm-3">
                 <a href="#main" rhref="#projects">PROJECTS</a>
             </li>
-            <li>
+            <li class="col-lg-11 offset-lg-1 col-sm-3 offset-sm-3">
                 <a href="#main" rhref="#social">SOCIAL</a>
             </li>
         </ul>
@@ -36,8 +36,8 @@
 
     <div class="container-fluid">
         <!-- Main -->
-        <div id="main">
-            <p>
+        <div id="main" class="row">
+            <p class="col-lg-9 offset-lg-2 col-sm-12 text-lg-left text-sm-center">
             I am Rupansh.
             <br>
             I code <em>stuff</em>
@@ -56,8 +56,8 @@
                     <li class="col-lg-3 col-md-6 col-sm-12">
                         <div class="skill">
                             <div class="fill" style="--max: {pix}px; animation-duration: {duration}s;">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
-                                    <path fill="#f5d300" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px" height="400px" viewBox="0 0 300 300"  xml:space="preserve">
+                                    <path fill="#f5d300" class="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
                                   c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
                                   c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
                                 </svg>
@@ -75,10 +75,10 @@
         </div>
 
         <!-- projects -->
-        <div id="projects">
+        <div id="projects" class="row">
             <h4>def projects(username="rupansh", project):</h4>
             <template name="proj-item">
-                <div class="proj-wrapper">
+                <div class="proj-wrapper col-8 offset-1 mr-5">
                     <a href="{url}" target="_blank">
                         <div class="project">
                             <div class="proj-info">
@@ -90,7 +90,8 @@
                     </a>
                 </div>
             </template>
-            <h4 id="pr-ret">return f"https://github.com/{username}/{project}"</h4>
+            <!-- Kinda hacky way to ml-lg-10 -->>
+            <h4 id="pr-ret" class="ml-lg-5 pl-lg-5">return f"https://github.com/{username}/{project}"</h4>
         </div>
     </div>
 
@@ -112,11 +113,10 @@
     </div>
 
     <!-- JS -->
-    <script src="js/detect-phone.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <script src="js/snuggsi.min.js"></script> <!-- CDN is too slow -->
-    <script src="js/three.r95.min.js"></script>
-    <script src="js/vanta.net.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js"></script>
     <script>
         VANTA.NET({
         el: "#main",
@@ -125,7 +125,6 @@
         minHeight: 200.00,
         minWidth: 200.00,
         scale: 1.00,
-        scaleMobile: 1.00,
         color: 0x8f7fe,
         backgroundColor: 0x121212
         })

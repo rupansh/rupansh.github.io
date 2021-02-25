@@ -74,8 +74,9 @@ $(document).ready(() => {
                 }, { duration:  10, easing: "linear" }).promise();
 
                 await $("#mOverlay").animate({ width: "100%" }).css({
-                    "display": "block",
-                    "z-index": 3
+                    "display": "grid",
+                    "z-index": 3,
+                    "align-items": "center"
                 }, { duration:  5, easing: "linear" }).promise();
 
                 await $(".overlay-nav").fadeIn("fast").promise();
@@ -93,13 +94,13 @@ $(document).ready(() => {
             // Menu Items in Nav
             $(self).children().hover(
                 () => {
-                    $(self).stop().animate({ width: "60%" }).css({
+                    $(self).stop().animate({ width: "60vw" }).css({
                         "overflow": "visible",
                         backgroundColor: "#09fbd3"
                     });
                 },
                 () => {
-                    $(self).stop().animate({ width: "0%" }).css({
+                    $(self).stop().animate({ width: "0vw" }).css({
                         "overflow": "visible",
                         backgroundColor: "#08f7fe"
                     });
