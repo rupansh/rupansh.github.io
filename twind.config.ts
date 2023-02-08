@@ -1,7 +1,9 @@
-import { Options } from "$fresh/plugins/twind.ts";
+import { defineConfig } from "@twind/core";
+import presetTailwind from "@twind/preset-tailwind";
+import presetAutoPrefix from "@twind/preset-autoprefix";
 
-export default {
-  selfURL: import.meta.url,
+export default defineConfig({
+  presets: [presetAutoPrefix(), presetTailwind()],
   theme: {
     fontFamily: {
       logo: ["Adamas", "sans-serif"],
@@ -24,20 +26,9 @@ export default {
           800: "#262626",
           900: "#171717",
         },
-        animation: {
-          "wave": "waveAction 0.5s linear infinite",
-        },
-        keyframes: {
-          "waveAction": {
-            "0%": { transform: "translate(-150px, 0)" },
-            "100%": { transform: "translate(0, 0)" },
-          },
-        },
       },
     },
   },
-  plugins: {
-    "backface-hidden": { "backface-visibility": "hidden" },
-    "fill": (color, { theme }) => ({ fill: theme("colors", color) }),
-  },
-} as Options;
+});
+
+export const configURL = import.meta.url;

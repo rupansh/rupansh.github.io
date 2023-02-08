@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "preact/hooks";
+import { FunctionalComponent } from "preact";
+import { useEffect, useState } from "preact/hooks";
 
 function sampleRand<T>(arr: ArrayLike<T>, len: number) {
   return Array.from(
@@ -52,14 +53,18 @@ const RandomText: FunctionalComponent<{ text: string }> = (props) => {
     return () => clearInterval(timer);
   }, [props.text]);
 
-  return curText.map((c, i) => (
-    <CharRender
-      char={c}
-      color={start >= i ? "pallete-yellow" : randColor()}
-      key={i}
-    >
-    </CharRender>
-  ));
+  return (
+    <>
+      {curText.map((c, i) => (
+        <CharRender
+          char={c}
+          color={start >= i ? "pallete-yellow" : randColor()}
+          key={i}
+        >
+        </CharRender>
+      ))}
+    </>
+  );
 };
 
 export default RandomText;
