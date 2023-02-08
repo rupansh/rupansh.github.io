@@ -4,6 +4,7 @@ import NavBar from "../components/navbar.tsx";
 import Hero from "../components/hero.tsx";
 import Welcome from "../components/welcome.tsx";
 import Skills from "../components/skills.tsx";
+import Projects from "../components/projects.tsx";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero></Hero>
         <Welcome></Welcome>
         <Skills></Skills>
+        <Projects></Projects>
       </div>
     </>
   );
