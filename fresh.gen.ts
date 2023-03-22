@@ -4,16 +4,26 @@
 
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/index.tsx";
-import * as $$0 from "./islands/random-text.tsx";
-import * as $$1 from "./islands/vanta-bg.tsx";
+import * as $1 from "./routes/nav.tsx";
+import * as $$0 from "./islands/nav-item.tsx";
+import * as $$1 from "./islands/navbar-button.tsx";
+import * as $$2 from "./islands/random-text.tsx";
+import * as $$3 from "./islands/social-pic.tsx";
+import * as $$4 from "./islands/transition-overlay.tsx";
+import * as $$5 from "./islands/vanta-bg.tsx";
 
 const manifest = {
   routes: {
     "./routes/index.tsx": $0,
+    "./routes/nav.tsx": $1,
   },
   islands: {
-    "./islands/random-text.tsx": $$0,
-    "./islands/vanta-bg.tsx": $$1,
+    "./islands/nav-item.tsx": $$0,
+    "./islands/navbar-button.tsx": $$1,
+    "./islands/random-text.tsx": $$2,
+    "./islands/social-pic.tsx": $$3,
+    "./islands/transition-overlay.tsx": $$4,
+    "./islands/vanta-bg.tsx": $$5,
   },
   baseUrl: import.meta.url,
   config,

@@ -51,7 +51,7 @@ const RandomText: FunctionalComponent<{ text: string }> = (props) => {
     }, 100);
 
     return () => clearInterval(timer);
-  }, [props.text]);
+  }, []);
 
   return (
     <>

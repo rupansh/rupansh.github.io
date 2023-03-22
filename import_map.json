@@ -11,9 +11,10 @@
     "@twind/preset-autoprefix": "https://esm.sh/@twind/preset-autoprefix@1.0.7",
     "vanta/": "https://esm.sh/vanta@0.5.24/dist/",
     "three": "https://esm.sh/three@0.140.2",
-    "@fortawesome/fontawesome-svg-core": "https://esm.sh/@fortawesome/fontawesome-svg-core",
-    "@fortawesome/free-solid-svg-icons": "https://esm.sh/@fortawesome/free-solid-svg-icons",
-    "@fortawesome/react-fontawesome": "https://esm.sh/@fortawesome/react-fontawesome?alias=react:preact/compat&alias=react-dom:preact/compat&external=preact",
+    "@fortawesome/fontawesome-svg-core": "https://esm.sh/@fortawesome/fontawesome-svg-core@6.3.0",
+    "@fortawesome/free-solid-svg-icons": "https://esm.sh/@fortawesome/free-solid-svg-icons@6.3.0",
+    "@fortawesome/free-brands-svg-icons": "https://esm.sh/@fortawesome/free-brands-svg-icons@6.3.0",
+    "@fortawesome/react-fontawesome": "https://esm.sh/@fortawesome/react-fontawesome@0.2.0?alias=react:preact/compat&alias=react-dom:preact/compat&external=preact",
     "freshwind": "https://deno.land/x/freshwind@4.0.0",
     "freshwind/": "https://deno.land/x/freshwind@4.0.0/"
   }
