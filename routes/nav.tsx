@@ -19,19 +19,12 @@ export default function Nav() {
       <DefaultHead></DefaultHead>
       <div className="bg-neutral-900 h-screen overflow-hidden">
         <NavBar iconHref="/" icon={faTimes} reverseTransition={true}></NavBar>
-        <div>
-          {hideOver ? <div /> : (
-            <TransitionOverlay
-              onTransitionOver={() => window.location.assign(nav)}
-            />
-          )}
-        </div>
         <div class={`grid grid-rows-2 pl-36 pr-4 pt-48 ${fadeIn}`}>
           <div class="flex flex-col text-white text-8xl">
             <NavItem href="/" text="HOME"></NavItem>
-            <NavItem href="/" text="SKILLS"></NavItem>
-            <NavItem href="/" text="PROJECTS"></NavItem>
-            <NavItem href="/" text="SOCIAL"></NavItem>
+            <NavItem href="/#skills" text="SKILLS"></NavItem>
+            <NavItem href="/#projects" text="PROJECTS"></NavItem>
+            <NavItem href="/#social" text="SOCIAL"></NavItem>
           </div>
         </div>
       </div>

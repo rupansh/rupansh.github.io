@@ -48,7 +48,7 @@ const projects = [
 export default function Projects() {
   return (
     <>
-      <h1 class="text-pallete-yellow text-center text-4xl py-52">
+      <h1 id="projects" class="text-pallete-yellow text-center text-4xl py-52">
         // Enter Projects
       </h1>
       <div class="flex flex-col text-pallete-green text-3xl px-44">
