@@ -188,9 +188,16 @@ $(document).ready(() => {
                 lang: "c",
                 license: "Various",
                 url: "https://github.com/ChimeraKernelProject"
-            }
+            },
+           
         ];
         projTemp.bind(ctx);
+
+        const footerTemp = Template("footer")
+        const context = [{
+            date: new Date().getFullYear().toString(),
+        }]
+        footerTemp.bind(context)
     })();
 
     // Waypoints Setup
@@ -378,3 +385,8 @@ $(document).ready(() => {
         });
     })();
 });
+
+footer = document.getElementById("footer-para")
+date = new Date().getFullYear
+footer.innerText = date
+
